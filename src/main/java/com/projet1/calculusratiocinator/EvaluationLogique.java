@@ -3,10 +3,10 @@ package com.projet1.calculusratiocinator;
 import java.util.HashMap;
 import java.util.Map;
 
-public class LogiqueConjonction {
+public class EvaluationLogique {
     private final Map<String, Affirmation> affirmations;
 
-    public LogiqueConjonction(){
+    public EvaluationLogique(){
         affirmations = new HashMap<>();
     }
 
