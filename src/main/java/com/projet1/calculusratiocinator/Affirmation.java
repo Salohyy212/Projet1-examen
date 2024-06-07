@@ -5,9 +5,9 @@ import lombok.Getter;
 @Getter
 public class Affirmation {
     private final String text;
-    private final String statut;
+    private final Statut statut;
 
-    public Affirmation(String text, String statut){
+    public Affirmation(String text, Statut statut){
         this.text=text;
         this.statut=statut;
     }
