@@ -24,7 +24,7 @@ public class EvaluationLogique {
             case Affirmation -> "jenesaispas";
         };
     }
-    public String ConjonctionEt(String affirmation1, String affirmation2){
+    public String conjonctionEt(String affirmation1, String affirmation2){
         String eval1 = logiqueEvaluer(affirmation1);
         String eval2 = logiqueEvaluer(affirmation2);
         if(eval1.equals("Vrai") && eval2.equals("Vrai")){
@@ -33,20 +33,21 @@ public class EvaluationLogique {
             return "Faux";
         }return "jenesaispas";
     }
-    public String ConjonctionOu(String affirmation1, String affirmation2){
+    public String conjonctionOu(String affirmation1, String affirmation2){
         String eval3 = logiqueEvaluer(affirmation1);
         String eval4 = logiqueEvaluer(affirmation2);
         if(eval3.equals("Vrai") || eval4.equals("Faux")){
             return "Vrai";
         }return "Faux";
     }
-    public String ConjonctionDonc(String affirmation1, String affirmation2){
+    public String conjonctionDonc(String affirmation1, String affirmation2){
         String eval5 = logiqueEvaluer(affirmation1);
         String eval6 = logiqueEvaluer(affirmation2);
         if(eval5.equals("Vrai") && eval6.equals("Faux")){
             return "Faux";
         }return "Vrai";
     }
+
 
 
 
