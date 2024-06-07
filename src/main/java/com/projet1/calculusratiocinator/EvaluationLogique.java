@@ -2,6 +2,7 @@ package com.projet1.calculusratiocinator;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Stack;
 
 public class EvaluationLogique {
     private final Map<String, Affirmation> affirmations;
@@ -47,11 +48,26 @@ public class EvaluationLogique {
             return "Faux";
         }return "Vrai";
     }
-
-
-
-
-
-
-
+    public String EvaluerEnsembleAffirmation(String expression) {
+        Stack<String> stack = new Stack<>();
+        String[] tokens = expression.split(" ");
+        for (String token : tokens) {
+            if (token.equals("et") || token.equals("ou") || token.equals("donc")) {
+                String b = stack.pop();
+                String a = stack.pop();
+                String result = "";
+                if (token.equals("et")) {
+                    result = conjonctionEt(a, b);
+                } else if (token.equals("ou")) {
+                    result = conjonctionOu(a, b);
+                } else {
+                    result = conjonctionDonc(a, b);
+                }
+                stack.push(result);
+            } else {
+                stack.push(token);
+            }
+        }
+        return stack.pop();
+    }
 }
